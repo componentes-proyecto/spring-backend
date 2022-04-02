@@ -2,7 +2,6 @@ package com.project.springbackend.Service;
 
 import com.project.springbackend.Domain.User;
 import com.project.springbackend.Repository.UserRepository;
-import org.hibernate.NonUniqueObjectException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +11,10 @@ public class UserService {
     UserRepository userRepository;
 
     public void save(User user) { userRepository.saveAndFlush(user); }
+
+    public User retrieve(String username){
+        return userRepository.findUserByUsername(username);
+
+    }
 
 }

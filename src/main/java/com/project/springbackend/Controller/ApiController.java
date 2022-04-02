@@ -8,9 +8,10 @@ import org.hibernate.NonUniqueObjectException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ApiController {
@@ -23,4 +24,11 @@ public class ApiController {
         userService.save(user);
         return user;
     }
+
+    @GetMapping (value = "/api/" + entityApi + "/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Model get(@PathVariable String username){
+        User user = userService.retrieve(username);
+        return user;
+    }
+
 }
