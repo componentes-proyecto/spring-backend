@@ -12,4 +12,5 @@ public class Response extends Model{
         this.message = message;
         this.data = data;
     }
+    public Response(){}
 }
