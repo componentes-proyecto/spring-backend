@@ -1,11 +1,9 @@
 package com.project.springbackend.Domain;
 
-import com.project.springbackend.Model.Model;
-
 import javax.persistence.*;
 
 @Entity
-public class User extends Model {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;
