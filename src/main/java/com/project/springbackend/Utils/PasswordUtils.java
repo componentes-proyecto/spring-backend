@@ -2,9 +2,8 @@ package com.project.springbackend.Utils;
 
 import com.project.springbackend.Domain.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.keygen.KeyGenerators;
 
-public class Utils {
+public class PasswordUtils {
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
 
     public String encodePassword(String raw) {
