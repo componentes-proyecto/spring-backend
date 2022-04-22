@@ -10,7 +10,9 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void save(User user) { userRepository.saveAndFlush(user); }
+    public void save(User user) {
+        userRepository.save(user);
+    }
 
     public User retrieve(String username){
         return userRepository.findUserByUsername(username);
